@@ -1,7 +1,9 @@
 "# server-client-ship" 
 Run Offshore Proxy (Server)
 docker run -d --name offshore -p 9999:9999 kartheek37/proxy-server:latest
+
 Run Ship Proxy (Client)
+
 docker run -d --name ship-proxy --link offshore:offshore -p 8080:8080 kartheek37/proxy-client:latest
 Test with curl
 For HTTP
